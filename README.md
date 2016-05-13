@@ -1,6 +1,6 @@
 # rust-await
 
-Core primitives for building asynchrnonous stuff
+Core primitives for building asynchronous stuff
 
 ## Dashboard
 
@@ -10,13 +10,13 @@ Core primitives for building asynchrnonous stuff
 
 ## Motivation
 
-_**We need some core types to help buildout asynchrnous frameworks.**_
+_**We need some core types to help build asynchronous frameworks.**_
 
 This crate does **not** intend to define the correct framework to use,
 but to simply present some _common_ basic primitives on top of which:
 _async/await_, _promises/futures_, _callbacks_, _state-machines_, _streams_... can be expressed upon.
 
-There is lenghty discussion on _async_ on rust at [RFC-1081 Async IO].
+There is lengthy discussion on _async_ on rust at [RFC-1081 Async IO].
 
 [RFC-1081 Async IO]: https://github.com/rust-lang/rfcs/issues/1081
 
@@ -24,7 +24,7 @@ There is lenghty discussion on _async_ on rust at [RFC-1081 Async IO].
 
 ### Tier-1 (Basic abstractions)
 
-| Crate | Prvoides | Builds-on |
+| Crate | Provides | Builds-on |
 |:-----:|:--------:|:---------:|
 | [mio]         | Event loop        | epoll/kqueue
 | [gj]          | Promises          | epoll/kqueue
@@ -34,7 +34,7 @@ There is lenghty discussion on _async_ on rust at [RFC-1081 Async IO].
 
 ### Tier-2 (IO/threading models)
 
-| Crate | Prvoides | Abstraction | Builds-on |
+| Crate | Provides | Abstraction | Builds-on |
 |:-----:|:--------:|:-----------:|:---------:|
 | [eventual-io] | Async IO    | futures        | [eventual] + [mio]
 | [gjio]        | Async IO    | promises       | [gj]
@@ -43,7 +43,7 @@ There is lenghty discussion on _async_ on rust at [RFC-1081 Async IO].
 
 ### Tier-3 (Domain specific)
 
-| Crate | Prvoides | Domain | Builds-on |
+| Crate | Provides | Domain | Builds-on |
 |:-----:|:--------:|:------:|:---------:|
 | [simplesched] | Coroutines + Async IO | Http | [mio] + [hyper]
 
@@ -66,11 +66,11 @@ There is lenghty discussion on _async_ on rust at [RFC-1081 Async IO].
 [simplesched]: https://github.com/zonyitoo/simplesched
 [hyper]: https://github.com/hyperium/hyper
 
-> Disclaimer: I appologize if your crate is missing, this is **not** intended to be a complete survery
+> Disclaimer: I apologize if your crate is missing, this is **not** intended to be a complete survey
 
 ## Goal
 
-- Define that **tier-0** abstraction on top of which all the **tier-1** are based on to interact with each other.
+- Define the **tier-0** abstraction on top of which all the **tier-1** should be based on, to interact with each other.
 - Having the base libraries for each async framework to build upon this core types.
 - Hopefully, the contents of this crate can at some point be moved to the [nursery] on their way to the [std].
 
