@@ -29,6 +29,18 @@
 
 pub mod examples;
 
+pub mod io;
+
+mod sync;
+mod thread;
+mod net;
+mod fs;
+
+pub use sync::*;
+pub use thread::*;
+pub use net::*;
+pub use fs::*;
+
 /// Represents then notion of something that we **could** have to _await_ for.
 ///
 /// The keyword **await** _could_ be added to the language.
@@ -71,6 +83,15 @@ impl<'a, T> Await<T> for Box<AwaitBox<T> + Send + 'a> {
     }
 }
 
+/// When they need an `Await<T>` and there is no need to wait
+pub struct AwaitValue<T>(pub T);
+
+impl<T> Await<T> for AwaitValue<T> {
+    fn await(self) -> T {
+        self.0
+    }
+}
+
 // ============================================================================
 //      `Await` for std types
 // ============================================================================
@@ -86,25 +107,6 @@ impl<'a, T> Await<T> for Box<AwaitBox<T> + Send + 'a> {
 impl<T, F: FnOnce() -> T> Await<T> for F {
     fn await(self) -> T {
         self()
-    }
-}
-
-use std::thread::JoinHandle;
-use std::any::Any;
-
-// Await on threads
-impl<T> Await<Result<T, Box<Any + Send + 'static>>> for JoinHandle<T> {
-    fn await(self) -> Result<T, Box<Any + Send + 'static>> {
-        self.join()
-    }
-}
-
-use std::sync::mpsc::{Receiver, RecvError};
-
-// Await `Receiver`
-impl<T> Await<Result<T, RecvError>> for Receiver<T> {
-    fn await(self) -> Result<T, RecvError> {
-        self.recv()
     }
 }
 

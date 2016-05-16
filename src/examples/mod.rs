@@ -2,6 +2,5 @@
 //!
 //! **This does not need to be on this crate**
 
-pub mod constant;
 pub mod promise;
 pub mod async;
