@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Future","At some point in time, it will hold a value `T`"],["Promise","Used to fulfill a promise (in other words, complete the `Future`)"],["PromiseDroppedError","Signals that the `Promise` dropped before being fullfilled. _Liar..._"]]});

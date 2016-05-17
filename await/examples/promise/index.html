@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `promise` mod in crate `await`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, promise">
+
+    <title>await::examples::promise - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>await</a>::<wbr><a href='../index.html'>examples</a></p><script>window.sidebarCurrent = {name: 'promise', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>await</a>::<wbr><a href='../index.html'>examples</a>::<wbr><a class='mod' href=''>promise</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-6' class='srclink' href='../../../src/await/src/examples/promise.rs.html#1-220' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p><em>&quot;Crate&quot;</em> for rerpresenting the <em>async</em> abstraction of <strong>promises / futures</strong></p>
+
+<ul>
+<li>A <code>Future</code> represents the potential of a value in the future</li>
+<li>A <code>Promise</code> is used to complete (a.k.a fulfill) the <code>Future</code>.</li>
+</ul>
+
+<p>One can say that a <code>Future&lt;T&gt;</code> is in essence an <code>Await&lt;T&gt;</code>, and they wouldn&#39;t be wrong.</p>
+
+<p><strong>Example: This does not need to be on this crate</strong></p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Future.html'
+                               title='await::examples::promise::Future'>Future</a></td>
+                        <td class='docblock short'>
+                             <p>At some point in time, it will hold a value <code>T</code></p>
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Promise.html'
+                               title='await::examples::promise::Promise'>Promise</a></td>
+                        <td class='docblock short'>
+                             <p>Used to fulfill a promise (in other words, complete the <code>Future</code>)</p>
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.PromiseDroppedError.html'
+                               title='await::examples::promise::PromiseDroppedError'>PromiseDroppedError</a></td>
+                        <td class='docblock short'>
+                             <p>Signals that the <code>Promise</code> dropped before being fullfilled. <em>Liar...</em></p>
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "await";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>
