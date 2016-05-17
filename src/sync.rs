@@ -24,8 +24,9 @@ impl<'a> Await<BarrierWaitResult> for &'a Barrier {
 use std::sync::mpsc::{Receiver, RecvError};
 
 // Await `Receiver`
-impl<T> Await<Result<T, RecvError>> for Receiver<T> {
+impl<'a, T> Await<Result<T, RecvError>> for &'a Receiver<T> {
     fn await(self) -> Result<T, RecvError> {
         self.recv()
     }
 }
+

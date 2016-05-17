@@ -6,8 +6,6 @@
 //! One can say that a `Future<T>` is in essence an `Await<T>`, and they wouldn't be wrong.
 //!
 //! **Example: This does not need to be on this crate**
-//!
-//! **TODO:** can we make a thread safe Future too?
 
 use std::sync::mpsc::{SyncSender, sync_channel, SendError};
 use std::mem;
